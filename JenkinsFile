@@ -25,7 +25,7 @@ pipeline {
         sh 'test -f requirements.txt'
         sh 'test -f dockerfile'
     }
-}}
+}
 
         stage('Test') {
             steps {
