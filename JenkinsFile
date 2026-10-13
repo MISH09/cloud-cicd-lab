@@ -18,11 +18,14 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                sh 'python3 -m pip install --user -r requirements.txt'
-            }
-        }
+      stage('Build') {
+    steps {
+        echo 'Preparing Student Service application for Docker build'
+        sh 'test -f app.py'
+        sh 'test -f requirements.txt'
+        sh 'test -f dockerfile'
+    }
+}}
 
         stage('Test') {
             steps {
